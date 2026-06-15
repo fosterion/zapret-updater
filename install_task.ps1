@@ -6,8 +6,8 @@
     that permanent copy. After this runs, the cloned repo can be deleted.
 
     Target folder (default): a sibling of install_path from config.json, named
-    "<zapret-folder>-updater".  e.g.  C:\Users\You\Documents\zapret
-                                  ->  C:\Users\You\Documents\zapret-updater
+    "<zapret-folder>-updater".  e.g.  C:\...\zapret
+                                  ->  C:\...\zapret-updater
     Override with -InstallDir "D:\somewhere\zapret-updater".
 
     Run ONCE, from an elevated PowerShell (Windows PowerShell 5.1 or 7 both work):

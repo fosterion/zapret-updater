@@ -1,5 +1,5 @@
 {
-  "install_path": "C:\\Users\\YOURNAME\\Documents\\zapret",
+  "install_path": "C:\\path\\to\\zapret",
   "default_config": null,
   "restart_after_update": true,
   "preserve_globs": [

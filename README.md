@@ -39,7 +39,7 @@
    Copy-Item config.example.json config.json
    ```
 
-   В `config.json` главное — `install_path` (папка zapret, напр. `C:\Users\<ты>\Documents\zapret`).
+   В `config.json` главное — `install_path` (полный путь к твоей папке zapret, напр. `C:\...\zapret`).
 2. Открой **PowerShell от имени администратора** в этой папке и выполни:
 
    ```powershell
@@ -47,7 +47,7 @@
    ```
 
    Скрипт **скопирует** `updater.py`, `config.json` и `uninstall_task.ps1` в постоянную
-   папку — соседнюю с zapret (`…\Documents\zapret` → `…\Documents\zapret-updater`) — и
+   папку — соседнюю с zapret (`C:\...\zapret` → `C:\...\zapret-updater`) — и
    зарегистрирует задачу с путями уже на эту копию. **После этого склонированный репозиторий
    можно удалить** — апдейтер работает из установленной папки. Другое место установки:
    `-InstallDir "D:\path\zapret-updater"`.
@@ -61,7 +61,7 @@
 
    ```powershell
    Start-ScheduledTask -TaskName ZapretAutoUpdater
-   Get-Content "$env:USERPROFILE\Documents\zapret-updater\updater.log" -Wait
+   Get-Content "C:\...\zapret-updater\updater.log" -Wait   # путь печатает установщик
    ```
 
 ## Ручной запуск
@@ -89,12 +89,12 @@ python updater.py --config D:\other\config.json
 
 ## Удаление
 
-Из установленной папки (`…\Documents\zapret-updater`) сними задачу, затем при
+Из установленной папки (`C:\...\zapret-updater`) сними задачу, затем при
 желании удали саму папку:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\uninstall_task.ps1
-Remove-Item -Recurse -Force "$env:USERPROFILE\Documents\zapret-updater"
+Remove-Item -Recurse -Force "C:\...\zapret-updater"
 ```
 
 Сам zapret это не трогает — удаляются только автообновления.
