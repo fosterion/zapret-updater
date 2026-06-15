@@ -1,7 +1,16 @@
 # Автообновлятор для zapret-discord-youtube
 
+[![tests](https://github.com/fosterion/zapret-updater/actions/workflows/tests.yml/badge.svg)](https://github.com/fosterion/zapret-updater/actions/workflows/tests.yml)
+
 При входе в систему и раз в час (через Планировщик задач Windows) проверяет [Flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube)
 и при выходе новой версии сам её ставит: останавливает запущенный zapret, стирает старую папку, распаковывает свежий релиз и запускает тот же конфиг, что работал.
+
+## Пример работы
+
+Один прогон, когда вышла новая версия — апдейтер сам прошёл весь цикл
+`1.9.9a → 1.9.9c` и перезапустил тот же конфиг:
+
+![Пример обновления](assets/demo.jpg)
 
 ## Файлы
 
