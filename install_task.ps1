@@ -88,11 +88,14 @@ Write-Host "Using interpreter: $python"
 $action = New-ScheduledTaskAction -Execute $python `
     -Argument "`"$Updater`"" -WorkingDirectory $InstallDir
 
-# Trigger 1: at logon. Trigger 2: hourly, forever, starting now.
+# Trigger 1: at logon. Trigger 2: hourly, starting now.
+# NB: do NOT use [TimeSpan]::MaxValue for the duration — Windows PowerShell 5.1
+# serializes it to P99999999DT23H59M59S, which Task Scheduler rejects as
+# out-of-range. A large finite duration (10 years) works in both 5.1 and 7.
 $atLogon = New-ScheduledTaskTrigger -AtLogOn
 $hourly  = New-ScheduledTaskTrigger -Once -At (Get-Date) `
     -RepetitionInterval (New-TimeSpan -Hours 1) `
-    -RepetitionDuration ([TimeSpan]::MaxValue)
+    -RepetitionDuration (New-TimeSpan -Days 3650)
 
 # Run in the current interactive user session, elevated.
 $principal = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" `

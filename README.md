@@ -1,6 +1,6 @@
 # Автообновлятор для zapret-discord-youtube
 
-При входе в систему и раз в час (через Планировщик задач Windows) проверяет [Flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube/releases)
+При входе в систему и раз в час (через Планировщик задач Windows) проверяет [Flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube)
 и при выходе новой версии сам её ставит: останавливает запущенный zapret, стирает старую папку, распаковывает свежий релиз и запускает тот же конфиг, что работал.
 
 ## Файлы
