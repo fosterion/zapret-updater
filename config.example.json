@@ -1,0 +1,10 @@
+{
+  "install_path": "C:\\Users\\YOURNAME\\Documents\\zapret",
+  "default_config": null,
+  "restart_after_update": true,
+  "preserve_globs": [
+    "lists/*-user.txt",
+    "utils/*.enabled",
+    "lists/ipset-all.txt.backup"
+  ]
+}

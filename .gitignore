@@ -1,0 +1,22 @@
+# Local config (contains your personal install_path).
+# Copy config.example.json -> config.json and edit it for your machine.
+config.json
+
+# Runtime artifacts
+updater.log
+state.json
+updater.lock
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editor / OS / tooling
+.claude/
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
